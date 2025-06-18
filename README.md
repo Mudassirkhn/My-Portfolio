@@ -15,22 +15,15 @@
 
 ## 📂 Featured Projects
 
-### 📚 Bookstore E-Commerce (MERN Stack)
-A full-fledged bookstore web application with admin panel and user features.
-- 🔐 Authentication & Authorization
-- 📦 Cart, Wishlist, Orders
-- 📚 Category-based Book Browsing
-- 👤 My Account (Profile, Orders, Address)
-- 🛠️ Tech: React, Node.js, Express, MongoDB
+### 🧑‍💻 Personal Portfolio Website
+A responsive and modern portfolio website to showcase my skills, projects, and resume.
+- 🖥️ Clean, responsive UI with smooth navigation
+- 📄 Downloadable resume section
+- 📧 Contact form integrated with EmailJS
+- 🔗 Social media and GitHub links
+- 🛠️ Tech: React.js, Tailwind CSS, EmailJS, React Icons
 
 🔗 [Live Demo](https://my-portfolio-jybt.onrender.com/) • [GitHub Repo](https://github.com/Mudassirkhn/My-Portfolio)
-
----
-
-## 📈 GitHub Stats
-
-![Mudassir's GitHub stats](https://github-readme-stats.vercel.app/api?username=yourusername&show_icons=true&theme=github_dark)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=yourusername&layout=compact&theme=github_dark)
 
 ---
 
