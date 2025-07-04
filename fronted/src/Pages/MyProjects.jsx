@@ -27,6 +27,13 @@ const Projects = () => {
       description: "A sleek weather forecasting app that fetches real-time weather data based on user location or city name, using React.js and OpenWeatherMap API.",
       link: "https://live-weatherr-appp.netlify.app/",
     },
+
+    {
+      id: 5,
+      title: "bookStore",
+      description: "BookStore is a full-featured MERN stack application for browsing, purchasing books online. It includes user authentication, shopping cart, wishlist, order management, and an admin dashboard to manage inventory, users, and orders.",
+      link: "https://bookstore-wj9e.onrender.com/",
+    },
   ];
 
   return (
