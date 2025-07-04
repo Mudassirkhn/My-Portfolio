@@ -30,7 +30,7 @@ const Projects = () => {
 
     {
       id: 5,
-      title: "bookStore",
+      title: "BookStore",
       description: "BookStore is a full-featured MERN stack application for browsing, purchasing books online. It includes user authentication, shopping cart, wishlist, order management, and an admin dashboard to manage inventory, users, and orders.",
       link: "https://bookstore-wj9e.onrender.com/",
     },
