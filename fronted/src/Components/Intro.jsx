@@ -47,7 +47,7 @@ const Intro = () => {
                         </a>
 
                         <a
-                            href="/resume.pdf"
+                            href="/resume2.pdf"
                             download
                             className="px-7 py-2 border rounded-2xl bg-white text-black font-semibold flex items-center gap-2 hover:scale-105 hover:shadow-lg transition-all duration-300"
                         >
