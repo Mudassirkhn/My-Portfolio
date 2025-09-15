@@ -11,7 +11,7 @@ const Intro = () => {
                 <img
                     src={Photo}
                     alt="Photo"
-                    className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover shadow-lg"
+                    className="w-24 h-24 sm:w-60 sm:h-60 rounded-full object-cover shadow-lg"
                 />
 
                 {/* Name */}
