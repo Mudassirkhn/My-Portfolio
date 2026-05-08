@@ -1,6 +1,7 @@
-import React, { useRef } from "react";
-import emailjs from "emailjs-com";
-import Swal from "sweetalert2";
+import React, { useRef } from 'react';
+import { motion } from 'framer-motion';
+import emailjs from 'emailjs-com';
+import Swal from 'sweetalert2';
 
 export const Contact = () => {
   const form = useRef();
@@ -9,104 +10,101 @@ export const Contact = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm(
-        "service_85o5ut9", // ✅ Your EmailJS Service ID
-        "template_eztkacv", // ✅ Your Template ID
-        form.current,
-        "Qdv-_-EeThbMLaRTV" // ✅ Your Public Key -emailjs
-      )
+      .sendForm('service_85o5ut9', 'template_eztkacv', form.current, 'Qdv-_-EeThbMLaRTV')
       .then(
-        (result) => {
-          console.log(result.text);
+        () => {
           Swal.fire({
-            icon: "success",
-            title: "Message Sent!",
-            text: "Thank you for contacting me. I will get back to you soon!",
-            background: "#1f1f1f",
-            color: "#ffffff",
-            confirmButtonColor: "#ff4b81",
+            icon: 'success',
+            title: 'Message Sent',
+            text: 'Thank you for contacting me. I will get back to you soon.',
+            background: '#0f1f2d',
+            color: '#e6f1ff',
+            confirmButtonColor: '#00c2a8',
           });
         },
-        (error) => {
-          console.log(error.text);
+        () => {
           Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Something went wrong. Please try again later!",
+            icon: 'error',
+            title: 'Oops',
+            text: 'Something went wrong. Please try again later.',
           });
         }
       );
 
-    e.target.reset(); // reset form after submission
+    e.target.reset();
   };
 
   return (
-    <div
-      className="bg-black text-white w-full min-h-screen py-16 px-4"
-      id="contact"
-    >
-      {/* Header */}
-      <div className="flex flex-col items-center justify-center text-center space-y-3">
-        <p className="text-sm sm:text-base uppercase tracking-wider">
-          Connect With Me
-        </p>
-        <h1 className="text-3xl sm:text-4xl font-bold">Get in Touch</h1>
-        <p className="text-sm sm:text-base max-w-2xl">
-          I'd love to hear from you! Fill out the form and I’ll get back to you
-          shortly.
-        </p>
-      </div>
+    <section id="contact" className="py-20">
+      <div className="section-shell">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="glass-panel p-7"
+          >
+            <p className="section-kicker">Contact</p>
+            <h2 className="section-title">Let's Build Something Great</h2>
+            <p className="mt-4 leading-8 text-soft">
+              Share your project idea, timeline, and goals. I will reach out with the best
+              plan to move it forward.
+            </p>
+            <div className="mt-8 space-y-3 text-sm text-soft">
+              <p>Email: mmkhan213@gmail.com</p>
+              <p>Location: India</p>
+              <p>Role: MERN Stack Web Developer</p>
+            </div>
+          </motion.div>
 
-      {/* Contact Form */}
-      <form
-        ref={form}
-        onSubmit={sendEmail}
-        className="w-full flex flex-col items-center justify-center py-10 gap-5"
-      >
-        {/* Name and Email */}
-        <div className="flex flex-col sm:flex-row gap-4 w-full max-w-3xl">
-          <input
-            type="text"
-            name="user_name"
-            placeholder="Your Name"
-            required
-            className="w-full bg-transparent border border-white rounded p-3 focus:outline-none focus:ring-2 focus:ring-pink-500"
-          />
-          <input
-            type="email"
-            name="user_email"
-            placeholder="Your Email"
-            required
-            className="w-full bg-transparent border border-white rounded p-3 focus:outline-none focus:ring-2 focus:ring-pink-500"
-          />
+          <motion.form
+            ref={form}
+            onSubmit={sendEmail}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="glass-panel space-y-4 p-7"
+          >
+            <div className="grid gap-4 sm:grid-cols-2">
+              <input
+                type="text"
+                name="user_name"
+                placeholder="Your Name"
+                required
+                className="rounded-xl border border-white/15 bg-[#102131] px-4 py-3 text-sm outline-none transition focus:border-[#00c2a8]"
+              />
+              <input
+                type="email"
+                name="user_email"
+                placeholder="Your Email"
+                required
+                className="rounded-xl border border-white/15 bg-[#102131] px-4 py-3 text-sm outline-none transition focus:border-[#00c2a8]"
+              />
+            </div>
+
+            <input
+              type="text"
+              name="user_phone"
+              placeholder="Your Phone Number"
+              required
+              className="w-full rounded-xl border border-white/15 bg-[#102131] px-4 py-3 text-sm outline-none transition focus:border-[#00c2a8]"
+            />
+
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+              required
+              className="w-full resize-none rounded-xl border border-white/15 bg-[#102131] px-4 py-3 text-sm outline-none transition focus:border-[#00c2a8]"
+            />
+
+            <button type="submit" className="primary-btn">
+              Send Message
+            </button>
+          </motion.form>
         </div>
-
-        {/* Phone Number */}
-        <input
-          type="text"
-          name="user_phone"
-          placeholder="Your Phone Number"
-          required
-          className="w-full max-w-3xl bg-transparent border border-white rounded p-3 focus:outline-none focus:ring-2 focus:ring-pink-500"
-        />
-
-        {/* Message */}
-        <textarea
-          name="message"
-          rows="5"
-          placeholder="Your Message"
-          required
-          className="w-full max-w-3xl bg-transparent border border-white rounded p-3 resize-none focus:outline-none focus:ring-2 focus:ring-pink-500"
-        ></textarea>
-
-        {/* Submit Button */}
-        <button
-          type="submit"
-          className="mt-4 bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 rounded-lg transition duration-300 font-semibold"
-        >
-          Submit
-        </button>
-      </form>
-    </div>
+      </div>
+    </section>
   );
 };

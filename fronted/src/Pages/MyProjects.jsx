@@ -1,78 +1,76 @@
-import React from "react";
-import { motion } from "framer-motion"
+import React from 'react';
+import { motion } from 'framer-motion';
+
+const projects = [
+  {
+    id: 1,
+    title: 'Portfolio Website',
+    description:
+      'A personal portfolio website showcasing skills, projects, and direct contact flow with a modern React experience.',
+    link: 'https://linktr.ee/mudassirkhn',
+  },
+  {
+    id: 2,
+    title: 'Task Management System',
+    description:
+      'A full task workflow app to create, manage, and track tasks efficiently with a production-style architecture.',
+    link: 'https://task-management-system-1-huxo.onrender.com/',
+  },
+  {
+    id: 3,
+    title: 'CRUD Project',
+    description:
+      'A focused CRUD web app for creating, reading, updating, and deleting records with fast React UI.',
+    link: 'https://crud-project-kdni.onrender.com/',
+  },
+  {
+    id: 4,
+    title: 'Weather App',
+    description:
+      'A real-time weather app based on city/location input using React and OpenWeatherMap API integration.',
+    link: 'https://live-weatherr-appp.netlify.app/',
+  },
+  {
+    id: 5,
+    title: 'BookStore',
+    description:
+      'A complete MERN bookstore with authentication, cart, wishlist, order management, and admin controls.',
+    link: 'https://bookstore-wj9e.onrender.com/',
+  },
+];
 
 const Projects = () => {
-  const projects = [
-    {
-      id: 1,
-      title: "Portfolio Website",
-      description: "A personal portfolio website built with React MongoDB, Express.js, React, and Node.js WhatsApp clone. It showcases my skills, projects, and contact information.",
-      link: "https://linktr.ee/mudassirkhn",
-    },
-    {
-      id: 2,
-      title: "Task Management System ",
-      description: "A comprehensive task management system that allows users to create, manage, and track tasks efficiently. Built with React.js and Node.js.",
-      link: "https://task-management-system-1-huxo.onrender.com/",
-    },
-    {
-      id: 3,
-      title: "CRUD Project",
-      description: "A simple CRUD application built with React.js, allowing users to create, read, update, and delete items.",
-      link: "https://crud-project-kdni.onrender.com/",
-    },
-    {
-      id: 4,
-      title: "Weather App",
-      description: "A sleek weather forecasting app that fetches real-time weather data based on user location or city name, using React.js and OpenWeatherMap API.",
-      link: "https://live-weatherr-appp.netlify.app/",
-    },
-
-    {
-      id: 5,
-      title: "BookStore",
-      description: "BookStore is a full-featured MERN stack application for browsing, purchasing books online. It includes user authentication, shopping cart, wishlist, order management, and an admin dashboard to manage inventory, users, and orders.",
-      link: "https://bookstore-wj9e.onrender.com/",
-    },
-  ];
-
   return (
-    <div className="bg-black py-24 px-6 min-h-screen text-white" id="projects">
-      <div className="max-w-6xl mx-auto">
-        <motion.h2
-          className="text-4xl font-bold mb-12 text-center underline underline-offset-8 decoration-blue-500"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          My Projects
-        </motion.h2>
+    <section id="projects" className="py-20">
+      <div className="section-shell">
+        <p className="section-kicker">Portfolio</p>
+        <h2 className="section-title">Selected Projects</h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.article
               key={project.id}
-              className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.07 }}
+              className="glass-panel card-hover flex flex-col p-6"
             >
-              <h3 className="text-2xl font-semibold mb-4">{project.title}</h3>
-              <p className="text-gray-400 mb-6">{project.description}</p>
+              <h3 className="text-xl font-semibold">{project.title}</h3>
+              <p className="mt-3 flex-1 text-sm leading-7 text-soft">{project.description}</p>
               <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-4 py-2 border border-blue-500 rounded-full text-blue-500 hover:bg-blue-500 hover:text-black transition-all duration-300 font-semibold"
+                className="mt-6 inline-flex w-fit items-center rounded-full border border-[#00c2a8]/60 px-4 py-2 text-sm font-semibold text-[#7ef0dd] transition hover:bg-[#00c2a8] hover:text-[#072027]"
               >
                 View Project
               </a>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

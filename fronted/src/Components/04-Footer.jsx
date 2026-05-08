@@ -1,46 +1,37 @@
-import React from 'react'
-import { MdEmail } from "react-icons/md";
+import React from 'react';
+import { MdEmail } from 'react-icons/md';
 
 const Footer = () => {
-    return (
-
-        <div className="flex flex-col items-center justify-center text-white bg-black w-full py-5 px-4" id="footer">
-            {/* Name and Email */}
-            <h1 className="font-semibold font-poppins leading-tight text-2xl sm:text-4xl text-center">
-                Mudassir Khan
-                <span className="text-pink-700 font-extrabold"> </span>
-            </h1>
-
-            <p className="flex items-center justify-center gap-2 py-4 text-sm sm:text-base">
-                <MdEmail size={22} />
-                <a
-                    href="mailto:mmkhan213@gmail.com"
-                    className="font-mono border-b-2 border-transparent hover:border-white transition-all duration-200"
-                >
-                    mmkhan213@gmail.com
-                </a>
-            </p>
-
-            {/* Divider Line */}
-            <div className="border-t border-gray-500 w-full max-w-5xl my-6"></div>
-
-            {/* Bottom Copyright and Links */}
-            <div className="flex flex-col sm:flex-row items-center justify-between w-full max-w-5xl text-center text-sm sm:text-[14px] space-y-4 sm:space-y-0">
-
-                {/* Left Text */}
-                <h2>©2025 Mudassir Web Developer. All rights reserved</h2>
-
-                {/* Social Links */}
-                <div className="flex space-x-6">
-                    <a href="https://www.linkedin.com/in/mudassir-khan-0a91862b7/" target="_blank" rel="noopener noreferrer" className="border-b-2 border-transparent hover:border-white transition-all duration-200">LinkedIn</a>
-                    <a href="https://github.com/Mudassirkhn" target="_blank" rel="noopener noreferrer" className="border-b-2 border-transparent hover:border-white transition-all duration-200">Github</a>
-                    <a href="" target="_blank" rel="noopener noreferrer" className="border-b-2 border-transparent hover:border-white transition-all duration-200">Instagram</a>
-                    <a href="" target="_blank" rel="noopener noreferrer" className="border-b-2 border-transparent hover:border-white transition-all duration-200">Facebook</a>
-                </div>
+  return (
+    <footer id="footer" className="pb-10 pt-4">
+      <div className="section-shell">
+        <div className="glass-panel space-y-6 px-6 py-7">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h3 className="text-2xl font-bold">Mudassir Khan</h3>
+              <p className="mt-1 text-sm text-soft">MERN Stack Web Developer</p>
             </div>
+            <a
+              href="mailto:mmkhan213@gmail.com"
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm text-soft transition hover:border-[#00c2a8] hover:text-white"
+            >
+              <MdEmail size={18} /> mmkhan213@gmail.com
+            </a>
+          </div>
+
+          <div className="h-px w-full bg-white/10" />
+
+          <div className="flex flex-col gap-4 text-sm text-soft sm:flex-row sm:items-center sm:justify-between">
+            <p>Copyright 2026 Mudassir Khan. All rights reserved.</p>
+            <div className="flex items-center gap-5">
+              <a href="https://www.linkedin.com/in/mudassir-khan-0a91862b7/" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">LinkedIn</a>
+              <a href="https://github.com/Mudassirkhn" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">GitHub</a>
+            </div>
+          </div>
         </div>
+      </div>
+    </footer>
+  );
+};
 
-    )
-}
-
-export default Footer
+export default Footer;
